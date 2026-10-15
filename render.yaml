@@ -1,0 +1,12 @@
+# Конфигурация для Render.com (BluePrint).
+# Render автоматически применит эти настройки при подключении репозитория.
+services:
+  - type: web
+    name: pyacademy
+    runtime: python
+    plan: free
+    buildCommand: ""
+    startCommand: "python server.py"
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.0"

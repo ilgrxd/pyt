@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyAcademy — интерактивный курс Python</title>
+  <meta name="description" content="Интерактивный курс Python от основ до профессионального уровня: уроки, домашние задания с автопроверкой, подсказки, таймер и видео." />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <button class="menu-btn" id="menuBtn" title="Меню">☰</button>
+    <a class="brand" href="#/dashboard">
+      <span class="brand-logo">🐍</span>
+      <span class="brand-name">PyAcademy</span>
+    </a>
+    <nav class="topnav">
+      <a href="#/dashboard" data-nav="dashboard">Обзор</a>
+      <a href="#/course" data-nav="course">Программа</a>
+      <a href="#/homework" data-nav="homework">Домашние задания</a>
+      <a href="#/playground" data-nav="playground">Песочница</a>
+      <a href="#/videos" data-nav="videos">Видео</a>
+      <a href="#/certificate" data-nav="certificate">Сертификат</a>
+    </nav>
+    <div class="topbar-right">
+      <div class="global-progress" title="Общий прогресс курса">
+        <div class="global-progress-bar"><span id="globalProgressBar"></span></div>
+        <span id="globalProgressText" class="global-progress-text">0%</span>
+      </div>
+      <div class="profile">
+        <span class="profile-label">Профиль:</span>
+        <input id="profileName" class="profile-input" type="text" value="Ученик" maxlength="20" title="Имя локального профиля. Для синхронизации войдите в аккаунт." />
+      </div>
+      <button id="accountBtn" class="btn btn-small">Войти</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-section">
+        <h3 class="sidebar-title">Курс</h3>
+        <div id="moduleTree" class="module-tree"></div>
+      </div>
+      <div class="sidebar-footer">
+        <button id="resetProgress" class="btn btn-ghost btn-small">Сбросить прогресс</button>
+        <p class="muted tiny">Python выполняется прямо в браузере. Прогресс хранится локально и синхронизируется с сервером при входе в аккаунт.</p>
+      </div>
+    </aside>
+
+    <main class="content" id="view"></main>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="data/curriculum.js"></script>
+  <script src="data/extra.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/python.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
